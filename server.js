@@ -11,10 +11,10 @@ app.listen(process.env.PORT||5000,()=>{
 
 app.get('/login',(req,res)=>{
   // console.log(req.query);
-  res.json(req.query)
+  res.json({method:'GET',query:req.query})
 })
 
 app.post('/login', (req,res)=>{
   // console.log(req.body);
-  res.json(req.body)
+  res.json({method:'POST',body:req.body})
 })
