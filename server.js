@@ -1,0 +1,20 @@
+const express = require('express');
+const app = express();
+
+// to extrat the data form the body
+app.use(express.json())
+app.use(express.urlencoded({extended:true}));
+
+app.listen(process.env.PORT||5000,()=>{
+  console.log('server is running on port 5000');
+});
+
+app.get('/login',(req,res)=>{
+  // console.log(req.query);
+  res.json(req.query)
+})
+
+app.post('/login', (req,res)=>{
+  // console.log(req.body);
+  res.json(req.body)
+})
